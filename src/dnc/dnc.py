@@ -1,36 +1,32 @@
-def mid_point(control_point1, control_point2):
-    return (
-        (control_point1[0] + control_point2[0]) / 2,
-        (control_point1[1] + control_point2[1]) / 2,
-    )
+def fill_bezier_points(point1, point2, point3, current_step):
+    global total_steps
+    if current_step < total_steps:
+        middle_point1 = calculate_mid_point(point1, point2)
+        middle_point2 = calculate_mid_point(point2, point3)
+        middle_point3 = calculate_mid_point(middle_point1, middle_point2)
+        current_step += 1
+        fill_bezier_points(point1, middle_point1, middle_point3, current_step)
+        bezier_points.append(middle_point3)
+        fill_bezier_points(middle_point3, middle_point2, point3, current_step)
 
+def calculate_mid_point(point1, point2):
+    return ((point1[0] + point2[0]) / 2, (point1[1] + point2[1]) / 2)
 
-def bezier_points(ctrl_points, current_iteration, iterations):
-    b_points = []
-    if current_iteration < iterations:
-        mid_points = [
-            mid_point(ctrl_points[i], ctrl_points[i + 1])
-            for i in range(len(ctrl_points) - 1)
-        ]
-        b_points.extend(mid_points)
-        new_ctrl_points = [ctrl_points[0]] + mid_points + [ctrl_points[-1]]
-        for i in range(len(new_ctrl_points) - 2):
-            b_points += bezier_points(
-                new_ctrl_points[i: i + 3], current_iteration + 1, iterations
-            )
-    return b_points
-
-
-def bezier(ctrl_points, iterations):
-    b_points = []
-    b_points += bezier_points(ctrl_points, 0, iterations)
-    return b_points
-
+def generate_bezier_curve(point1, point2, point3):
+    global bezier_points
+    bezier_points = []
+    bezier_points.append(point1)
+    fill_bezier_points(point1, point2, point3, 0)
+    bezier_points.append(point3)
 
 # Example usage
-iterations = 5
-ctrl_points = [(0, 0), (1, 1), (2, 0)]
+total_steps = 5
+bezier_points = []
 
-b_points = bezier(ctrl_points, iterations)
+point1 = (0, 0)
+point2 = (4, 4)
+point3 = (8, 0)
 
-print(b_points)
+generate_bezier_curve(point1, point2, point3)
+
+print(bezier_points)
