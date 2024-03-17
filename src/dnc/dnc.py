@@ -1,3 +1,4 @@
+## Divide and Conquer to generate Bezier curve
 def fill_bezier_points(point1, point2, point3, current_step):
     global total_steps
     if current_step < total_steps:
@@ -9,9 +10,11 @@ def fill_bezier_points(point1, point2, point3, current_step):
         bezier_points.append(middle_point3)
         fill_bezier_points(middle_point3, middle_point2, point3, current_step)
 
+## Calculate the middle point between two points
 def calculate_mid_point(point1, point2):
     return ((point1[0] + point2[0]) / 2, (point1[1] + point2[1]) / 2)
 
+## Generate the Bezier curve using the given control points
 def generate_bezier_curve(point1, point2, point3):
     global bezier_points
     bezier_points = []

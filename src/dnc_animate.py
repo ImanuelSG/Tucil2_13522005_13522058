@@ -8,10 +8,12 @@ control_points = [Point(-2, 0), Point(-4, 2), Point(-2, 4), Point(2, 4), Point(4
 # control_points = [Point(0, 0), Point(2, 4), Point(6, 4), Point(8, 0)]
 result_points = []
 mid_points = []
-iterations = 2
+iterations = 3
 n = len(control_points)
 
 create_bezier_points(control_points, result_points, mid_points, iterations, n)
+end = time()
+
 
 # Function to destructure the array
 def destructure_array(points: list[list[Point]], n: int) -> list[list[list[Point]]]:
@@ -31,7 +33,7 @@ def destructure_array(points: list[list[Point]], n: int) -> list[list[list[Point
 
 result_points = destructure_array(result_points, n)    
 
-end = time()
+
 print(f"Time Taken: {(end - start) * 1000} ms")
 
 plt.figure()
@@ -41,21 +43,21 @@ plt.ylim(min(control_points, key=lambda x: x.y).y - 1, max(control_points, key=l
 # Plot the control points
 for point in control_points:
     plt.plot(point.x, point.y, 'go')
-    plt.pause(0.3)
+    plt.pause(0.1)
 
 # Plot the lines between the control points
 for i in range(len(control_points) - 1): 
     plt.plot([control_points[i].x, control_points[i + 1].x], [control_points[i].y, control_points[i + 1].y], 'b-')
-    plt.pause(0.3)
+    plt.pause(0.1)
 
 # Plot the result points
 for array_points in result_points:
     for points in array_points:
         for point in points:
             plt.plot(point.x, point.y, 'bo')
-            plt.pause(0.3)
+            plt.pause(0.1)
         for i in range(len(points) - 1): 
             plt.plot([points[i].x, points[i + 1].x], [points[i].y, points[i + 1].y], 'r-')
-            plt.pause(0.3)
+            plt.pause(0.1)
 
 plt.show()
