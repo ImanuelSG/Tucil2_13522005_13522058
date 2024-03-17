@@ -20,7 +20,7 @@ def generate_bezier_curve(point1, point2, point3):
     bezier_points.append(point3)
 
 # Example usage
-total_steps = 5
+total_steps = 2
 bezier_points = []
 
 point1 = (0, 0)
