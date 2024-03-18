@@ -1,5 +1,6 @@
 import numpy as np
 from bruteforce.bruteforce import plotBezierCurveBruteForce
+from dnc.dnc_animate import plotBezierCurveDnC
 from utils.utils import read_control_points_from_file
 from time import time
 
@@ -26,7 +27,8 @@ def main():
             num_samples = pow(2,num_samples) + 1
             plotBezierCurveBruteForce(Points, num_samples)
         else: 
-            print("Metode Divide and Conquer belum diimplementasikan")
+            interval = float(input("Masukkan interval waktu: "))
+            plotBezierCurveDnC(Points, num_samples, interval)
         # Plot the Bézier curve
     except ValueError as ve:
         print("Error:", ve)
