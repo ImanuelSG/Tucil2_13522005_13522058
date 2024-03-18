@@ -57,6 +57,9 @@ def plotBezierCurveDnC(Points: list[tuple], iterations: int, interval: int) -> N
         plt.pause(interval)
 
     # Plot the result points
+    # result_points is an array of arrays of arrays of points like [[[Point(1,1)], [Point(2,2)]], [[Point(3,3)], [Point(4,4)]]]
+    # array_points is an array of array of points like [[Point(1,1)], [Point(2,2), Point(3,3)]]
+    
     for array_points in result_points:
         for j, points in enumerate(array_points):
             for i , point in enumerate(points):
@@ -66,7 +69,11 @@ def plotBezierCurveDnC(Points: list[tuple], iterations: int, interval: int) -> N
                     plt.plot(point.x, point.y, 'yo', label='Result Points')
                 plt.pause(interval)
             for i in range(len(points) - 1): 
-                plt.plot([points[i].x, points[i + 1].x], [points[i].y, points[i + 1].y], 'y-')
+                
+                if (i == len(points) - 2 and j == len(array_points) - 2):
+                    plt.plot([points[i].x, points[i + 1].x], [points[i].y, points[i + 1].y], 'r-')
+                else : 
+                    plt.plot([points[i].x, points[i + 1].x], [points[i].y, points[i + 1].y], 'y-')
                 plt.pause(interval)
 
     plt.show()

@@ -1,1 +1,0 @@
-control_points = [Point(-2, 0), Point(-4, 2), Point(-2, 4), Point(2, 4), Point(4, 2), Point(2, 0)]

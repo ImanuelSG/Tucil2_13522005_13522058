@@ -19,7 +19,10 @@ def main():
         if Points is None:
             return
         # Input number of samples
-        print("Untuk metode brute force, jumlah nilai 7 akan disamakan dengan metode divide and conquer. \nMisal 3 iterasi akan menggunakan 2^3 - 1 = 7 variansi nilai t.")
+        if (method == "1"):
+            print()
+            print("Untuk metode brute force, jumlah nilai t akan disamakan dengan metode divide and conquer. \nMisal 3 iterasi akan menggunakan 2^3 - 1 = 7 variansi nilai t, diluar Kecuali titik control awal")
+            print()
         num_samples = int(input("Masukkan jumlah iterasi: "))
         
 
@@ -37,5 +40,3 @@ def main():
 if __name__ == "__main__":
    
     main()
-    
-    
