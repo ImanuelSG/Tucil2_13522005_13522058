@@ -16,12 +16,12 @@ coordinates = [
 # Convert coordinates into Point objects
 # control_points = [Point(x, y) for x, y in coordinates]
 # control_points = [Point(0, 0), Point(2, 4), Point(4, 2), Point(6, 6), Point(8, 0)]
-control_points = [Point(2, 4), Point(-4, -2), Point(6, 1), Point(-1, 4)]
+control_points = [Point(2, 4), Point(-4, -2), Point(6, 1)]
 # control_points = [Point(-2,-3), Point(-3,-2), Point(0,-2), Point(1,-3), Point(2,1) ]
 
 result_points = []
 mid_points = []
-iterations = 1
+iterations = 8
 n = len(control_points)
 
 create_bezier_points(control_points, result_points, mid_points, iterations, n)
@@ -56,12 +56,12 @@ plt.ylim(min(control_points, key=lambda x: x.y).y - 1, max(control_points, key=l
 # Plot the control points
 for point in control_points:
     plt.plot(point.x, point.y, 'go')
-    plt.pause(0.1)
+    plt.pause(0.001)
 
 # Plot the lines between the control points
 for i in range(len(control_points) - 1): 
     plt.plot([control_points[i].x, control_points[i + 1].x], [control_points[i].y, control_points[i + 1].y], 'b-')
-    plt.pause(0.1)
+    plt.pause(0.001)
 
 # Plot the result points
 for array_points in result_points:
@@ -71,10 +71,10 @@ for array_points in result_points:
                 plt.plot(point.x, point.y, 'ro')
             else:
                 plt.plot(point.x, point.y, 'yo')
-            plt.pause(0.1)
+            plt.pause(0.001)
         for i in range(len(points) - 1): 
             plt.plot([points[i].x, points[i + 1].x], [points[i].y, points[i + 1].y], 'y-')
-            plt.pause(0.1)
+            plt.pause(0.001)
 
 plt.show()
 
@@ -85,24 +85,27 @@ plt.ylim(min(control_points, key=lambda x: x.y).y - 1, max(control_points, key=l
 # Plot the control points
 for point in control_points:
     plt.plot(point.x, point.y, 'go')
-    plt.pause(0.1)
+    plt.pause(0.001)
 
 # Plot the lines between the control points
 for i in range(len(control_points) - 1): 
     plt.plot([control_points[i].x, control_points[i + 1].x], [control_points[i].y, control_points[i + 1].y], 'b-')
-    plt.pause(0.1)
+    plt.pause(0.001)
+
 
 # Plot the mid points
 for point in mid_points:
     plt.plot(point.x, point.y, 'ro')
-    plt.pause(0.1)
+    plt.pause(0.001)
+
 
 # Add the first and last control points to the mid points
+
 mid_points = [control_points[0]] + mid_points + [control_points[-1]]
 
 # Plot the lines between the mid points
 for i in range(len(mid_points) - 1): 
     plt.plot([mid_points[i].x, mid_points[i + 1].x], [mid_points[i].y, mid_points[i + 1].y], 'r-')
-    plt.pause(0.1)
+    plt.pause(0.001)
 
 plt.show()
