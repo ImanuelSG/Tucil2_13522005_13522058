@@ -22,17 +22,16 @@ def coordinates_to_points(coordinates: list[tuple]) -> list[Point]:
 
 
 def plotBezierCurveDnC(Points: list[tuple], iterations: int, interval: int) -> None:
-    start = time()
-   
     # Convert coordinates into Point objects
     control_points = coordinates_to_points(Points)
     result_points = []
     mid_points = []
     n = len(control_points)
 
+    start = time()
     create_bezier_points(control_points, result_points, mid_points, iterations, n)
-    
     end = time()
+    
 
     execution_time = (end - start) * 1000  # Convert to milliseconds
 
