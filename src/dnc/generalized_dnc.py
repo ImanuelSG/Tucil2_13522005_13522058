@@ -31,7 +31,6 @@ def left_control_points(result: list[Point], control_points: list[Point], n: int
         left.append(result[j])
         j += n - i - 1
         i += 1
-
     return left
 
 # Function to find the right side control points
@@ -44,7 +43,6 @@ def right_control_points(result: list[Point], control_points: list[Point], n: in
         j -= (i + 1)
         i += 1
     right.append(control_points[-1])
-    
     return right
 
 
@@ -60,7 +58,6 @@ def create_bezier_points(control_points: list[Point], result_points: list[Point]
         search_midpoint(control_points, result)
         result_points.append(result)
        
-        
         left = left_control_points(result, control_points, n)
         create_bezier_points(left, result_points, mid_points, iterations - 1, n)
         
@@ -68,4 +65,3 @@ def create_bezier_points(control_points: list[Point], result_points: list[Point]
 
         right = right_control_points(result, control_points, n)
         create_bezier_points(right, result_points, mid_points, iterations - 1, n)
-        

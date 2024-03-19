@@ -30,8 +30,15 @@ def main():
             num_samples = pow(2,num_samples) + 1
             plotBezierCurveBruteForce(Points, num_samples)
         else: 
-            interval = float(input("Masukkan interval waktu: "))
-            plotBezierCurveDnC(Points, num_samples, interval)
+            displaymethod = input("Apakah anda ingin menampilkan animasi? (y/n): ")
+            while (displaymethod != "y" and displaymethod != "n"):
+                print("Masukkan y atau n")
+                displaymethod = input("Apakah anda ingin menampilkan animasi? (y/n): ")
+            if displaymethod == "y":
+                interval = float(input("Masukkan interval waktu: "))
+                plotBezierCurveDnC(Points, num_samples, interval, 1)
+            else:
+                plotBezierCurveDnC(Points, num_samples, 0, 2)
         # Plot the Bézier curve
     except ValueError as ve:
         print("Error:", ve)

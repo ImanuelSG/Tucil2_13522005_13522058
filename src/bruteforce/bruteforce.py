@@ -17,18 +17,19 @@ def generatePascalCoef(power, position):
     return factorial(power) // (factorial(position) * factorial(power - position))
     
 ## Generate a new point on the curve using the given formula
-def generateNewPoint(Points, t, order):
+def generateNewPoint(Points, t, order, pascalcoefs):
     result = np.array([0.0, 0.0])
-    Coeffiescient
+    
     for i in range(order + 1):
-        result += generatePascalCoef(order, i) * (1-t)**(order-i) * t**i * Points[i]
+        result += pascalcoefs[i] * (1-t)**(order-i) * t**i * Points[i]
     return result
 
 ## Generate the Bézier curve using the given control points and number of iteration
 def generateBezierCurve(Points, num_iteration):
     order = len(Points) - 1
     t_values = np.linspace(0, 1, num_iteration)
-    curve_points = np.array([generateNewPoint(Points, t, order) for t in t_values])
+    pascalcoefs = [generatePascalCoef(order, i) for i in range(order + 1)]
+    curve_points = np.array([generateNewPoint(Points, t, order, pascalcoefs) for t in t_values])
     return curve_points
 
 ## Plot the Bézier curve with the given control points and number of iteration
@@ -55,7 +56,7 @@ def plotBezierCurveBruteForce(Points, num_iteration):
     plt.ylabel('Y')
     num_points = len(Points)
 
-    plt.title('Bézier Curve with ' + str(num_points) + ' Control Points and ' + str(int(np.log2(num_iteration-1))) + ' iteration' + '\n' + 'Execution Time: ' + str(execution_time) + ' ms')
+    plt.title('Bézier Curve with ' + str(num_points) + ' Control Points and ' + str(int(np.log2(num_iteration-1))) + ' iteration' + '\n' +'With Brute Force' +'\n'+ 'Execution Time: ' + str(execution_time) + ' ms')
     
     plt.legend()
     plt.grid(True)
