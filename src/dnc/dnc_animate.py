@@ -76,9 +76,9 @@ def plotBezierCurveDnC(Points: list[tuple], iterations: int, interval: int, meth
                         plt.plot([points[i].x, points[i + 1].x], [points[i].y, points[i + 1].y], 'y-')
                     plt.pause(interval)
 
-        plt.show()
-
-        plt.close()  # Close the current figure
+        plt.show(block=False)
+        plt.pause(3)
+        plt.close()
 
         # Plot the second figure
         plt.figure()
@@ -125,6 +125,8 @@ def plotBezierCurveDnC(Points: list[tuple], iterations: int, interval: int, meth
         for i in range(len(control_points) - 1): 
             plt.plot([control_points[i].x, control_points[i + 1].x], [control_points[i].y, control_points[i + 1].y], 'b-')
             
+        # Add the first and last control points to the mid points
+        mid_points = [control_points[0]] + mid_points + [control_points[-1]]
 
         # Plot the result points
         for i in range(len(mid_points) - 1): 
