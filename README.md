@@ -1,86 +1,117 @@
-# Project Name
-> Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+# Making Bezier Curve Using Divide and Conquer Approach
+
+> This project is made using Python by applying the Divide and Conquer approach in the MidPoint algorithm to build a smooth Bezier Curve that uses N control points and I iterations.
 
 ## Table of Contents
-* [General Info](#general-information)
-* [Technologies Used](#technologies-used)
-* [Features](#features)
-* [Screenshots](#screenshots)
-* [Setup](#setup)
-* [Usage](#usage)
-* [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
 
+- [General Info](#general-information)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Project Status](#project-status)
+- [Room for Improvement](#room-for-improvement)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
+- This project was made to fulfill our second task in Algorithm Strategies course in order to use the Divide and Conquer algorithm for practical use cases.
+- This project is aimed at showing how powerful a good Divide and Conquer approach can be in terms of increasing the performance speed of one's code.
+- With this project, we hope people can see more about the use cases of the Divide and Conquer approach.
 
 ## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
 
+- Python
+
+## Libraries Used
+
+- matplotlib
+- time
+- dataclasses
+- numpy
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
 
+List the ready features here:
+
+- Generate Bezier Curve with Brute Force Algorithm
+- Generate Bezier Curve with Divide and Conquer Algorithm
+- Displaying the final display
+- Displaying the final process of making the Bezier Curve with the Divide and Conquer Algorithm and displaying the final result
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
 
+![Example screenshot](./img/screenshot.png)
 
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
+```bash
+git clone https://github.com/ImanuelSG/Tucil2_13522005_13522058.git
+cd Tucil2_13522005_13522058
+cd src
+python main.py
+```
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
 
-`write-your-code-here`
+To add a test case file, please navigate to the test/input folder and provide a txt file. You will be prompted to enter the filename (example : tes1.txt)
 
+```bash
+N = Number of Control Points
+x1 y1
+x2 y2
+xN yN
+```
+
+for example with 3 Control Points
+
+```bash
+3
+1 0
+2 1
+4 1
+```
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
 
+| Poin                                                                   | Ya      | Tidak |
+| ---------------------------------------------------------------------- | ------- | ----- |
+| 1. Program berhasil dijalankan.                                        | &#9745; |       |
+| 2. Program dapat melakukan visualisasi kurva Bézier.                   | &#9745; |       |
+| 3. Solusi yang diberikan program optimal.                              | &#9745; |       |
+| 4. [Bonus] Program dapat membuat kurva untuk n titik kontrol.          | &#9745; |       |
+| 5. [Bonus] Program dapat melakukan visualisasi proses pembuatan kurva. | &#9745; |       |
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
+
+There are a lot of things that can be developed more from this project since this program is still relatively simple.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+
+- Better algorithm and argument passing
+- Improved animation methods
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
 
+- Add better animation to make the process more visible
+- Develop a better GUI for easier input (website if possible)
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
 
+- Biggest thanks to Dr. Nur Ulfa Maulidevi, S.T, M.Sc as our lecturer
+- Biggest thanks to the internet for being such a wonderful place to search for something
+- Biggest thanks to all our friends who have helped us to develop this program
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
 
+Created by:
+
+| Name                      | NIM      | Contact                     |
+| ------------------------- | -------- | --------------------------- |
+| Ahmad Naufal Ramadhan     | 13522005 | 13522005@std.stei.itb.ac.id |
+| Imanuel Sebastian Girsang | 13522058 | 13522058@std.stei.itb.ac.id |
 
 <!-- Optional -->
 <!-- ## License -->

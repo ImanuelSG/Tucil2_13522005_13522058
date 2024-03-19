@@ -19,6 +19,7 @@ def generatePascalCoef(power, position):
 ## Generate a new point on the curve using the given formula
 def generateNewPoint(Points, t, order):
     result = np.array([0.0, 0.0])
+    Coeffiescient
     for i in range(order + 1):
         result += generatePascalCoef(order, i) * (1-t)**(order-i) * t**i * Points[i]
     return result
