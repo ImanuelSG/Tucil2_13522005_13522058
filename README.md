@@ -54,12 +54,15 @@ List the ready features here:
 git clone https://github.com/ImanuelSG/Tucil2_13522005_13522058.git
 cd Tucil2_13522005_13522058
 cd src
+pip install matplotlib
+pip install numpy
+pip install dataclasses
 python main.py
 ```
 
 ## Usage
 
-To add a test case file, please navigate to the test/input folder and provide a txt file. You will be prompted to enter the filename (example : tes1.txt)
+To add a test case file, please navigate to the test/input folder and provide a txt file. When you run the program, you  will be prompted to enter the filename relative to the test/input folder (example : tes1.txt)
 
 ```bash
 N = Number of Control Points

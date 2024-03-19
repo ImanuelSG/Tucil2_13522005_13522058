@@ -24,7 +24,7 @@ def read_control_points_from_file(filename):
         print(str(le))
         return None
     except FileNotFoundError:
-        print(f"Error: File '{filename}' tidak ditemukan, silahkan coba lagi.")
+        print(f"Error: File '{filename}-' tidak ditemukan, silahkan coba lagi.")
         return None
     except ValueError as e:
         print(str(e))
