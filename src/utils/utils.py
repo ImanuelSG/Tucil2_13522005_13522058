@@ -6,7 +6,7 @@ class LengthError(Exception):
 
 def read_control_points_from_file(filename):
     try:
-        filename = "test/input/" + filename 
+        filename = "../test/input/" + filename 
         with open(filename, 'r') as file:
             num_points = int(file.readline())
             points = []

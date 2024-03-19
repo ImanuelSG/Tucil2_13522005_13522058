@@ -21,7 +21,7 @@ def main():
         # Input number of samples
         if (method == "1"):
             print()
-            print("Untuk metode brute force, jumlah nilai t akan disamakan dengan metode divide and conquer. \nMisal 3 iterasi akan menggunakan 2^3 - 1 = 7 variansi nilai t, diluar Kecuali titik control awal")
+            print("Untuk metode brute force, jumlah nilai t akan disamakan dengan metode divide and conquer. \nMisal 3 iterasi akan menggunakan 2^3 - 1 = 7 variansi nilai t, diluar titik control awal")
             print()
         num_samples = int(input("Masukkan jumlah iterasi: "))
         

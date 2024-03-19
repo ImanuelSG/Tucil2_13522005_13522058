@@ -43,7 +43,10 @@ List the ready features here:
 
 ## Screenshots
 
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./test/output//tes10/dnc-10.png)
+![Example screenshot](./test/output//tes4/bf-4.png)
+![Example screenshot](./test/output//tes7/dnc-7.png)
+
 
 ## Setup
 
